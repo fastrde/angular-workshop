@@ -1,0 +1,8 @@
+<input (input)="updateBookSearchTerm($event)">
+
+<app-book-card
+  *ngFor="let book of books$ | asyncBookfilter: bookSearchTerm | async"
+  [content]="book"
+  (detailClick)="goToBookDetails($event)"
+></app-book-card>
+
